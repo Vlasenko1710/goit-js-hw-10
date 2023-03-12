@@ -29,9 +29,9 @@ input.addEventListener('input', debounce(e => {
 function renderCountryList(countries) {
     const markup = countries.map(country => {
         return `<li>
-        <img src ="${country.flags.svg}"
+        <p><img src ="${country.flags.svg}"
          alt = "Flag of ${country.name.official}" width = "30" hight = "20">
-         <p>${country.name.official}<p>
+         ${country.name.official}<p>
          </li>`;
     }).join('');
     countryList.innerHTML = markup;
@@ -39,12 +39,12 @@ function renderCountryList(countries) {
 function renderOneCountry(countries) {
     const markup = countries.map(country => {
         return `<li>
-                <img src ="${country.flags.svg}"
-                 alt = "Flag of ${country.name.official}" width = "30" hight = "20">
-                 <p>${country.name.official}<p>
-                 <p><b>Capital</b>:${country.capital}</p>
-                 <p><b>Population</b>:${country.population}</p>
-                 <p><b>Languages</b>:${Object.values(country.languages)}</p>
+                <p class = "country__name"><img src ="${country.flags.svg}"
+                 alt = "Flag of ${country.name.official}" width = "40" hight = "40">
+                 ${country.name.official}<p>
+                 <p><b>Capital</b>: ${country.capital}</p>
+                 <p><b>Population</b>: ${country.population}</p>
+                 <p><b>Languages</b>: ${Object.values(country.languages)}</p>
                  </li>`;
     }).join('');
     countryList.innerHTML = markup;
